@@ -1,0 +1,83 @@
+﻿manjaro gnome juz ma chyba od zera git zsh, tylko dodaj echo aliasy do gita moze
+
+
+0. general update (nwm czy az tak naprawde potrzebne)
+pamac upgrade --enable-downgrade --force-refresh  (to bo jakies syfy z database)
+sudo pacman-mirrors --fasttrack
+sudo pacman -Syyuu
+echo $XDG_SESSION_TYPE - tym sprawdzilem, ze mam wayland
+
+
+1 instalacja chrome (w tym git sie sam instaluje), to bedzie oddzielny skrypt
+
+
+sudo pacman -S yay --noconfirm
+sudo pacman -S chromium --noconfirm
+yay -Sy google-chrome --noconfirm
+
+
+
+
+
+
+2 dotfile
+dodaj klucz ssh do pc
+git config --global user.name “percit”
+git config --global user.email “marcinzdunek100@gmail.com”
+
+
+git clone git@github.com:percit/my-dotfiles.git ~/.dotfiles
+
+
+
+
+
+
+3 neovim
+https://github.com/AstroNvim/AstroNvim
+robisz jak z tutka, instalujesz fonty Firacode Nerdfont (pobierasz, naciskasz i open with fonts)
+potem instalujesz treeseeter cli
+dalej to :LspInstall clangd, :LspInstall qmlls (ale ta czesc jeszcze nie dziala) i tyle!
+
+
+
+
+4 terminal 
+default terminal tu to gnome terminal, jest good enough, raczej go nie ruszaj, tylko transparent mod i nord theme
+https://github.com/arcticicestudio/nord-gnome-terminal 
+pamietaj o zamienieniu przy text - cell width na 1.00 (double click to be sure)
+
+
+4.5 tiling assisant i setupy
+https://extensions.gnome.org/extension/3733/tiling-assistant/ 
+tutaj jest instalacja tiling assistant, po tym musisz sie wylogowac, zeby zaczelo dzialac
+win strzalki
+win q - zamkniecie okna
+
+
+5.1 waybar
+podejrzewam, ze polybar mi nie zadziala na waylandzie (ktorego mam na manjaro gnome), wiec waybar is the place to go
+
+
+sudo pacman -S wayland-protocols pkg-config cmake spdlog musisz najpierw dac
+na dzien dzisiejszy nie dziala to, dodalem bug report na repo
+
+
+6 rofi 
+ git clone --depth=1 https://github.com/adi1090x/rofi.git
+ cd rofi
+ chmod +x setup.sh
+./setup.sh
+cd /home/percit/.config/rofi/launchers/type-1
+zamien style-1 na style-8
+settings->keyboard->custom shortcut i dodac  /home/percit/.config/rofi/launchers/type-1/launcher.sh jako ctrl r
+
+
+
+
+
+
+7 random
+* ogarnij screenshotowanie
+* instalacja qt creatora, android studio itd, ale to juz w vm
+*
